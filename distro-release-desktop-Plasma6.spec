@@ -7,7 +7,7 @@
 %define new_vendor OpenMandriva
 %define new_product OpenMandriva Lx
 # (tpg) use codename from here https://wiki.openmandriva.org/en/policies/codename
-%define new_codename Nickel
+%define new_codename ROME
 %define vendor_tag %(echo %{new_vendor} |tr A-Z a-z)
 %define distribution_tag %(echo %{new_distribution} |tr A-Z a-z |sed -e 's,[ /!?],_,g')
 %define product_tag %(echo %{new_product} |tr A-Z a-z |sed -e 's,[ /!?],_,g')
