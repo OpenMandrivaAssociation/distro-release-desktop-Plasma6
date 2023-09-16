@@ -107,7 +107,8 @@ mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/shutdown
 mkdir -p %{buildroot}%{_datadir}/kservices5
 mkdir -p %{buildroot}%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents
-mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
+# mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
+mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/contents
 mkdir -p %{buildroot}%{_datadir}/konsole
 
 for i in kcmdisplayrc kcmfonts kcminputrc kdeglobals kscreenlockerrc ksplashrc kwinrc startupconfig startupconfigfiles kcm-about-distrorc ksmserverrc kiorc dolphinrc konsolerc klaunchrc plasma_workspace.notifyrc powermanagementprofilesrc PlasmaUserFeedback plasma-org.kde.plasma.desktop-appletsrc startupconfigkeys; do
@@ -122,12 +123,15 @@ ln -sf %{_sysconfdir}/xdg/plasma-workspace/env/kdeglobals.sh %{buildroot}%{_sysc
 install -m 0644 desktops/Plasma6/qtlogging.ini %{buildroot}%{_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 desktops/Plasma6/OM.profile %{buildroot}%{_datadir}/konsole/OM.profile
 mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel
-cp -a desktops/Plasma6/org.openmandriva5.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+# cp -a desktops/Plasma6/org.openmandriva5.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+cp -a desktops/Plasma6/org.openmandriva6.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
 
 ### DESKTOP PLASMA6 END ###
 
 %files
 %{_sysconfdir}/xdg/*
 %{_datadir}/konsole/OM.profile
-%{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
-%{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+# %{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
+%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel
+# %{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+%{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
