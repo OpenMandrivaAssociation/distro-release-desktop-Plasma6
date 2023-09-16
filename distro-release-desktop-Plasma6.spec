@@ -15,8 +15,8 @@
 %define new_disturl http://openmandriva.org/
 %define new_bugurl https://github.com/OpenMandrivaAssociation/distribution/issues/
 
-%define am_i_cooker 1
-%undefine am_i_rolling
+%undefine am_i_cooker
+%define am_i_rolling 1
 %if 0%?am_i_cooker
 %define distrib Cooker
 %else
@@ -94,7 +94,7 @@ BuildArch:	noarch
 %{distribution} release file for Plasma 6
 
 %prep
-%autosetup -p1 %{?am_i_cooker:-n distro-release-master}
+%autosetup -p1 -n distro-release-%{?am_i_cooker:master}%{!?am_i_cooker:%{version}}
 
 %install
 ### DESKTOP PLASMA6 ###
