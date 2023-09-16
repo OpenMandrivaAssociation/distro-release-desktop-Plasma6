@@ -79,7 +79,7 @@ DistTag:	%{shorttag}%{distro_tag}
 Release:	1
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
-Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{?am_i_cooker:refs/heads/master}%{!?am_i_cooker:%{version}/%{name}-%{version}}.tar.gz
+Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
 Group:		System/Configuration/Other
 BuildRequires:	cmake(ECM)
 Requires:	distro-release-desktop >= %{version}
