@@ -93,7 +93,7 @@ BuildArch:	noarch
 %{distribution} release file for Plasma 6
 
 %prep
-%autosetup -p1
+%autosetup -p1 -n distro-release-%{?am_i_cooker:master}%{!?am_i_cooker:%{version}}
 
 %install
 ### DESKTOP PLASMA6 ###
