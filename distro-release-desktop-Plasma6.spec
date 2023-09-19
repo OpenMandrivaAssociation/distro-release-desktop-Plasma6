@@ -92,6 +92,7 @@ BuildArch:	noarch
 
 %prep
 #%autosetup -p1 %{?am_i_cooker:-n distro-release-master}
+#%autosetup -p1 -n distro-release-%{?am_i_cooker:%{version}
 %autosetup -p1 -n distro-release-%{version}
 
 %install
