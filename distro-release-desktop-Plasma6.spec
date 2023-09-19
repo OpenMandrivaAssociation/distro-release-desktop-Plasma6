@@ -73,7 +73,7 @@ Summary:	%{new_distribution} release file
 Name:		distro-release-desktop-Plasma6
 Version:	23.09
 DistTag:	%{shorttag}%{distro_tag}
-Release:	3
+Release:	4
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
 #Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
