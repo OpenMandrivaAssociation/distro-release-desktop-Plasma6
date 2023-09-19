@@ -122,7 +122,7 @@ ln -sf %{_sysconfdir}/xdg/plasma-workspace/env/kdeglobals.sh %{buildroot}%{_sysc
 install -m 0644 desktops/Plasma6/qtlogging.ini %{buildroot}%{_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 desktops/Plasma6/OM.profile %{buildroot}%{_datadir}/konsole/OM.profile
 mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel
-cp -a desktops/Plasma6/org.openmandriva5.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+cp -a desktops/Plasma6/org.openmandriva6.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/
 
 ### DESKTOP PLASMA6 END ###
 
@@ -130,4 +130,4 @@ cp -a desktops/Plasma6/org.openmandriva5.desktop %{buildroot}%{_datadir}/plasma/
 %{_sysconfdir}/xdg/*
 %{_datadir}/konsole/OM.profile
 %{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
-%{_datadir}/plasma/look-and-feel/org.openmandriva5.desktop
+%{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
