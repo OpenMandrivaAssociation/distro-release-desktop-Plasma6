@@ -72,10 +72,12 @@
 Summary:	%{new_distribution} release file
 Name:		distro-release-desktop-Plasma6
 Version:	23.90
+
 DistTag:	%{shorttag}%{distro_tag}
 Release:	2
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
+
 Source0:	distro-release-%{version}.tar.gz
 Group:		System/Configuration/Other
 BuildRequires:	cmake(ECM)
@@ -91,10 +93,7 @@ BuildArch:	noarch
 %{distribution} release file for Plasma 6
 
 %prep
-#%autosetup -p1 %{?am_i_cooker:-n distro-release-master}
-#%autosetup -p1 -n distro-release-%{?am_i_cooker:%{version}}
-#%autosetup -p1 -n distro-release-%{version}
-%autosetup -p1 -n distro-release-%{!?am_i_cooker:master}%{?am_i_cooker:%{version}}
+%autosetup -p1 -n distro-release-%{version}
 
 %install
 ### DESKTOP PLASMA6 ###
