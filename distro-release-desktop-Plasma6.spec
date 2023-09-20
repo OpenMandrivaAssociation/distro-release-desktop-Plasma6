@@ -76,7 +76,7 @@ Version:	23.90
 # 3001 = 3.1
 # 3001 = 3.2 etc.
 DistTag:	%{shorttag}%{distro_tag}
-Release:	1
+Release:	2
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
 Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{?am_i_cooker:refs/heads/master}%{!?am_i_cooker:%{version}/%{name}-%{version}}.tar.gz
@@ -98,7 +98,6 @@ BuildArch:	noarch
 
 %install
 ### DESKTOP PLASMA6 ###
-
 mkdir -p %{buildroot}%{_sysconfdir}/xdg
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/KDE
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/QtProject
@@ -107,7 +106,8 @@ mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/shutdown
 mkdir -p %{buildroot}%{_datadir}/kservices5
 mkdir -p %{buildroot}%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents
-mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel/contents
+mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel
+mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/contents
 mkdir -p %{buildroot}%{_datadir}/konsole
 
 for i in kcmdisplayrc kcmfonts kcminputrc kdeglobals kscreenlockerrc ksplashrc kwinrc startupconfig startupconfigfiles kcm-about-distrorc ksmserverrc kiorc dolphinrc konsolerc klaunchrc plasma_workspace.notifyrc powermanagementprofilesrc PlasmaUserFeedback plasma-org.kde.plasma.desktop-appletsrc startupconfigkeys; do
@@ -121,13 +121,21 @@ install -m 0644 desktops/Plasma6/kdeglobals.sh %{buildroot}%{_sysconfdir}/xdg/pl
 ln -sf %{_sysconfdir}/xdg/plasma-workspace/env/kdeglobals.sh %{buildroot}%{_sysconfdir}/xdg/autostart-scripts/kdeglobals.sh
 install -m 0644 desktops/Plasma6/qtlogging.ini %{buildroot}%{_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 desktops/Plasma6/OM.profile %{buildroot}%{_datadir}/konsole/OM.profile
-mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel
-cp -a desktops/Plasma6/org.openmandriva6.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/
-
+cp -a desktops/Plasma6/org.openmandriva6.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
+# (rugyada)
+install -m 0644 desktops/Plasma6/metadata-omP6panel.desktop %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/metadata.desktop
+install -m 0644 desktops/Plasma6/metadata-omP6panel.json %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/metadata.json
+install -m 0644 desktops/Plasma6/metadata-omP6panel.desktop %{buildroot}%{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.desktop
+install -m 0644 desktops/Plasma6/metadata-omP6panel.json %{buildroot}%{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.json
+install -m 0644 desktops/Plasma6/org.kde.plasma.desktop-layout.js %{buildroot}%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
+install -m 0644 desktops/Plasma6/org.om.plasma6.desktop.defaultPanel-layout.js %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/contents/layout.js
 ### DESKTOP PLASMA6 END ###
 
 %files
 %{_sysconfdir}/xdg/*
 %{_datadir}/konsole/OM.profile
-%{_datadir}/plasma/layout-templates/org.openmandriva.plasma.desktop.defaultPanel
+%{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.desktop
+%{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.json
+%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel
 %{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
+%{_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
