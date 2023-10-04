@@ -15,7 +15,7 @@
 %define new_disturl http://openmandriva.org/
 %define new_bugurl https://github.com/OpenMandrivaAssociation/distribution/issues/
 
-%define am_i_cooker 1
+%undefine am_i_cooker
 %undefine am_i_rolling
 %if 0%?am_i_cooker
 %define distrib Cooker
@@ -79,8 +79,7 @@ DistTag:	%{shorttag}%{distro_tag}
 Release:	1
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
-#Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
-Source0:	distro-release-%{version}.tar.gz
+Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
 Group:		System/Configuration/Other
 BuildRequires:	cmake(ECM)
 Requires:	distro-release-desktop >= %{version}
@@ -95,7 +94,7 @@ BuildArch:	noarch
 %{distribution} release file for Plasma 6
 
 %prep
-%autosetup -p1 %{?am_i_cooker:-n distro-release-master}
+%autosetup -p1 -n distro-release-%{?am_i_cooker:master}%{!?am_i_cooker:%{version}}
 
 %install
 ### DESKTOP PLASMA6 ###
