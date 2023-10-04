@@ -1,4 +1,5 @@
 # distro-release-desktop-Plasma6
+### ROME - rolling branch
 
 `Version:`/`Release:` should be aligned with
 
