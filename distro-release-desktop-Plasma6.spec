@@ -71,7 +71,7 @@
 
 Summary:	%{new_distribution} release file
 Name:		distro-release-desktop-Plasma6
-Version:	24.01
+Version:	24.90
 # (tpg) something needs to be done to make comparision 3.0 > 2015.0 came true
 # 3001 = 3.1
 # 3001 = 3.2 etc.
@@ -111,7 +111,7 @@ mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.
 mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma.desktop.globalMenuPanel/contents
 mkdir -p %{buildroot}%{_datadir}/konsole
 
-for i in kcmdisplayrc kcmfonts kcminputrc kdeglobals kscreenlockerrc ksplashrc kwinrc startupconfig startupconfigfiles kcm-about-distrorc ksmserverrc kiorc dolphinrc konsolerc klaunchrc plasma_workspace.notifyrc powermanagementprofilesrc PlasmaUserFeedback plasma-org.kde.plasma.desktop-appletsrc startupconfigkeys; do
+for i in kcmdisplayrc kcmfonts kcminputrc kdeglobals kscreenlockerrc ksplashrc kwinrc startupconfig startupconfigfiles kcm-about-distrorc ksmserverrc kiorc dolphinrc konsolerc klaunchrc plasmashellrc plasma_workspace.notifyrc powermanagementprofilesrc PlasmaUserFeedback plasma-org.kde.plasma.desktop-appletsrc startupconfigkeys; do
     install -m 0644 desktops/Plasma6/$i %{buildroot}%{_sysconfdir}/xdg/$i
 done
 
