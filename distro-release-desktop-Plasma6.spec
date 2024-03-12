@@ -76,7 +76,7 @@ Version:	24.90
 # 3001 = 3.1
 # 3001 = 3.2 etc.
 DistTag:	%{shorttag}%{distro_tag}
-Release:	1
+Release:	2
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
 Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{?am_i_cooker:refs/heads/master}%{!?am_i_cooker:%{version}/%{name}-%{version}}.tar.gz
@@ -110,10 +110,12 @@ mkdir -p %{buildroot}%{_datadir}/plasma/look-and-feel
 mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/contents
 mkdir -p %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma.desktop.globalMenuPanel/contents
 mkdir -p %{buildroot}%{_datadir}/konsole
+mkdir -p %{buildroot}%{_datadir}/applications
 
 for i in kcmdisplayrc kcmfonts kcminputrc kdeglobals kscreenlockerrc ksplashrc kwinrc startupconfig startupconfigfiles kcm-about-distrorc ksmserverrc kiorc dolphinrc konsolerc klaunchrc plasmashellrc plasma_workspace.notifyrc powermanagementprofilesrc PlasmaUserFeedback plasma-org.kde.plasma.desktop-appletsrc startupconfigkeys; do
     install -m 0644 desktops/Plasma6/$i %{buildroot}%{_sysconfdir}/xdg/$i
 done
+install -m 0644 desktops/Plasma6/mimeapps.list %{buildroot}%{_datadir}/applications/mimeapps.list
 
 install -m 0644 desktops/Plasma6/plasma-firstsetup.sh %{buildroot}%{_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh
 ln -sf %{_sysconfdir}/xdg/plasma-workspace/env/plasma-firstsetup.sh %{buildroot}%{_sysconfdir}/xdg/autostart-scripts/plasma-firstsetup.sh
@@ -144,3 +146,4 @@ install -m 0644 desktops/Plasma6/metadata-globalMenu.json %{buildroot}%{_datadir
 %{_datadir}/plasma/layout-templates/org.om.plasma.desktop.globalMenuPanel
 %{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
 %{_datadir}/plasma/shells/org.kde.plasma.desktop/contents/layout.js
+%{_datadir}/applications/mimeapps.list
