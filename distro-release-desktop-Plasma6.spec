@@ -1,4 +1,4 @@
-# 2024-09-27
+# 2024-11-27
 # Please update release notes:
 # make -C SOURCES release-notes.{html,txt}
 #
@@ -73,7 +73,7 @@
 
 Summary:	%{new_distribution} release file
 Name:		distro-release-desktop-Plasma6
-Version:	24.09
+Version:	24.11
 # (tpg) something needs to be done to make comparision 3.0 > 2015.0 came true
 # 3001 = 3.1
 # 3001 = 3.2 etc.
