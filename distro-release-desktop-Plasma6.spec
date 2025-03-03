@@ -80,8 +80,7 @@ DistTag:	%{shorttag}%{distro_tag}
 Release:	2
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
-#Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
-Source0:	distro-release-%{version}.tar.gz
+Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/refs/heads/%{version}.tar.gz
 Group:		System/Configuration/Other
 BuildRequires:	cmake(ECM)
 Requires:	distro-release-desktop >= %{version}
