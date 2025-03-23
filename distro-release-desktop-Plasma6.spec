@@ -86,7 +86,8 @@ BuildRequires:	cmake(ECM)
 Requires:	distro-release-desktop >= %{version}
 Requires:	distro-release-theme >= %{version}
 Requires:	plasma6-breeze
-Requires:	plasma6-breeze-gtk
+Suggests:	(plasma6-breeze-gtk if %{_lib}gtk3_0)
+Suggests:	(plasma6-breeze-gtk if %{_lib}gtk4_1)
 Requires:	kf6-breeze-icons
 Requires:	noto-sans-fonts
 BuildArch:	noarch
