@@ -127,6 +127,7 @@ install -m 0644 desktops/Plasma6/kdeglobals.sh %{buildroot}%{_sysconfdir}/xdg/pl
 ln -sf %{_sysconfdir}/xdg/plasma-workspace/env/kdeglobals.sh %{buildroot}%{_sysconfdir}/xdg/autostart-scripts/kdeglobals.sh
 install -m 0644 desktops/Plasma6/qtlogging.ini %{buildroot}%{_sysconfdir}/xdg/QtProject/qtlogging.ini
 install -m 0644 desktops/Plasma6/OM.profile %{buildroot}%{_datadir}/konsole/OM.profile
+install -m 0644 desktops/Plasma6/om-colors.colorscheme %{buildroot}%{_datadir}/konsole/om-colors.colorscheme
 cp -a desktops/Plasma6/org.openmandriva6.desktop %{buildroot}%{_datadir}/plasma/look-and-feel/org.openmandriva6.desktop
 # (rugyada)
 install -m 0644 desktops/Plasma6/metadata-omP6panel.desktop %{buildroot}%{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel/metadata.desktop
@@ -143,6 +144,7 @@ install -m 0644 desktops/Plasma6/metadata-globalMenu.json %{buildroot}%{_datadir
 %files
 %{_sysconfdir}/xdg/*
 %{_datadir}/konsole/OM.profile
+%{_datadir}/konsole/om-colors.colorscheme
 %{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.desktop
 %{_datadir}/kservices5/plasma-layout-template-org.om.plasma6.desktop.defaultPanel.json
 %{_datadir}/plasma/layout-templates/org.om.plasma6.desktop.defaultPanel
