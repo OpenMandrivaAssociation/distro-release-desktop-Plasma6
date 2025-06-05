@@ -72,12 +72,12 @@
 
 Summary:	%{new_distribution} release file
 Name:		distro-release-desktop-Plasma6
-Version:	25.04
+Version:	25.06
 # (tpg) something needs to be done to make comparision 3.0 > 2015.0 came true
 # 3001 = 3.1
 # 3001 = 3.2 etc.
 DistTag:	%{shorttag}%{distro_tag}
-Release:	4
+Release:	1
 License:	GPLv2+
 URL:		https://github.com/OpenMandrivaSoftware/distro-release
 #Source0:	https://github.com/OpenMandrivaSoftware/distro-release/archive/%{version}/%{name}-%{version}.tar.gz
